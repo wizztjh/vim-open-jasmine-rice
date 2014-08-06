@@ -1,5 +1,5 @@
 function OpenJasmineRice()
-  normal! gg/describe<cr>
+  execute "normal! gg/describe\<cr>"
   let line=getline('.')
 
   let jasmine_describe_string= matchlist(line, "\\v['\"](.*)['\"]")[1]
