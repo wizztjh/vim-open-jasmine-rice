@@ -11,5 +11,5 @@ function OpenJasmineRice()
 
 :endfunction
 
-nnoremap <Leader>oj :call OpenJasmineRice()
+nnoremap <Leader>oj :call OpenJasmineRice()<CR>
 
