@@ -6,8 +6,8 @@ function OpenJasmineRice()
   let jasmine_http_url = "http://localhost:3000/jasmine?spec="
 
 
-  let test_str= "open '" . jasmine_http_url . jasmine_describe_string . "'"
-  call system(test_str)
+  let command_string = "open '" . jasmine_http_url . jasmine_describe_string . "'"
+  call system(command_string)
 
 :endfunction
 
