@@ -3,7 +3,7 @@ function OpenJasmineRice()
   let current_line = getline('.')
   " Define current indent level to a ridiculously large number.
   let current_indent_level = 1000
-  let spec_string = ''
+  let spec_string = ""
 
   " Get the closest 'it'/'describe' block, first check
   " the current line before doing a backward search.
@@ -30,15 +30,20 @@ function OpenJasmineRice()
       let current_indent_level = line_indent_level
 
       let match_str = matchlist(current_line, "\\v['\"](.*)['\"]")[1]
-      let spec_string = match_str . ' ' . spec_string
+
+      if spec_string == ""
+        let spec_string = match_str
+      else
+        let spec_string = match_str . ' ' . spec_string
+      endif
+
     endif
+
   endwhile
 
   " Open Jasmine specs with the string
   let jasmine_http_url = "http://localhost:3000/jasmine?spec="
-
   let command_string = "open '" . jasmine_http_url . spec_string . "'"
-  echom command_string
   call system(command_string)
 
 endfunction
