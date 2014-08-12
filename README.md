@@ -35,7 +35,7 @@ It also works for any "describe" block.
 Usage
 =====
 
-Type <Leader>oj in any line in a jasmine spec file.
+Type |<leader>oj in any line in a jasmine spec file.
 
 oj stands for "open jasmine."
 
