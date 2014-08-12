@@ -1,5 +1,6 @@
 function OpenJasmineRice()
 
+  let line_number = line('.')
   let current_line = getline('.')
   " Define current indent level to a ridiculously large number.
   let current_indent_level = 1000
@@ -46,6 +47,7 @@ function OpenJasmineRice()
   let command_string = "open '" . jasmine_http_url . spec_string . "'"
   call system(command_string)
 
+  call cursor(line_number, 0)
 endfunction
 
 nnoremap <Leader>oj :call OpenJasmineRice()<CR>
