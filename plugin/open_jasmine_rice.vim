@@ -44,7 +44,7 @@ function OpenJasmineRice()
 
   " Open Jasmine specs with the string
   let jasmine_http_url = "http://localhost:3000/jasmine?spec="
-  let command_string = "open '" . jasmine_http_url . spec_string . "'"
+  let command_string = "open -a Google\\ Chrome  --new --args '" . jasmine_http_url . spec_string . "' -incognito"
   call system(command_string)
 
   call cursor(line_number, 0)
